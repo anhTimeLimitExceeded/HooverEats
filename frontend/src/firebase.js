@@ -15,5 +15,17 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+const googleProvider = new GoogleAuthProvider();
+const signIn = async () => {
+  await signInWithPopup(auth, googleProvider);
+};
+const signOut = async () => {
+  await auth.signOut();
+};
+const getIdToken = async () => {
+  const idToken = await auth.currentUser.getIdToken(true);
+  return idToken;
+};
+
 export default app;
-export { GoogleAuthProvider, auth, signInWithPopup };
+export { auth, googleProvider, signIn, signOut, getIdToken };
