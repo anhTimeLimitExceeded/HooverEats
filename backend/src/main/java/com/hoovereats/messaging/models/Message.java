@@ -21,11 +21,11 @@ public class Message {
 	@Column(name = "recipient_name")
 	private String recipientName;
 	private String content;
-	private String timestamp;
+	private Long timestamp;
 	@Column(name = "conversation_id")
 	private Integer conversationId;
 
-	public Message(Integer id, String senderUid, String senderName, String recipientUid, String recipientName, String content, String timestamp, Integer conversationId) {
+	public Message(Integer id, String senderUid, String senderName, String recipientUid, String recipientName, String content, Long timestamp, Integer conversationId) {
 		this.id = id;
 		this.senderUid = senderUid;
 		this.senderName = senderName;
@@ -88,11 +88,19 @@ public class Message {
 		this.content = content;
 	}
 
+<<<<<<< HEAD
 	public String getTimestamp() {
 		return timestamp;
 	}
 
 	public void setTimestamp(String timestamp) {
+=======
+	public Long getTimestamp() {
+		return timestamp;
+	}
+
+	public void setTimestamp(Long timestamp) {
+>>>>>>> add messaing, user profile endpoints and matching algorithm
 		this.timestamp = timestamp;
 	}
 
